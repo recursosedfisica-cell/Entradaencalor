@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REA: Reglamento Básico de Básquetbol (8° EBI)</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- Barra de Accesibilidad DUA -->
+    <header class="top-bar">
+        <h1>Básquetbol: Reglamento Básico</h1>
+        <div class="accessibility-controls" aria-label="Herramientas de accesibilidad">
+            <button id="btn-contrast" aria-label="Cambiar a modo alto contraste">☯️ Contraste</button>
+            <button id="btn-text-inc" aria-label="Aumentar tamaño de texto">A+</button>
+            <button id="btn-text-dec" aria-label="Disminuir tamaño de texto">A-</button>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <!-- Múltiples formas de Representación: Datos Esenciales -->
+        <section class="card">
+            <h2>Estructura del Juego y Cancha</h2>
+            <div class="benefits-grid">
+                <article class="benefit-card">
+                    <span class="icon" aria-hidden="true">⏱️</span>
+                    <h3>Tiempo</h3>
+                    <p>4 períodos de 10 min. Tiempo extra de 5 min si hay empate.</p>
+                </article>
+                <article class="benefit-card">
+                    <span class="icon" aria-hidden="true">👥</span>
+                    <h3>Jugadores</h3>
+                    <p>5 en cancha por equipo y hasta 7 suplentes (sin límite de cambios).</p>
+                </article>
+                <article class="benefit-card">
+                    <span class="icon" aria-hidden="true">📐</span>
+                    <h3>Cancha</h3>
+                    <p>28m de largo por 15m de ancho. Inicio con salto en círculo central.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Reglas de Tiempo y Puntuación -->
+        <section class="card">
+            <h2>Reglas de Tiempo y Sistema de Puntuación</h2>
+            
+            <h3>Límites de Posesión y Posición:</h3>
+            <ul class="phases-list">
+                <li><strong>8 segundos:</strong> Tiempo máximo para cruzar la línea de medio campo.</li>
+                <li><strong>24 segundos:</strong> Tiempo máximo para intentar un tiro al aro.</li>
+                <li><strong>3 segundos:</strong> Tiempo máximo que un atacante puede permanecer en la zona pintada.</li>
+            </ul>
+
+            <h3 style="margin-top: 1.5rem;">Puntuación:</h3>
+            <div class="benefits-grid">
+                <article class="benefit-card">
+                    <h3>1 Punto</h3>
+                    <p>Tiro libre anotado.</p>
+                </article>
+                <article class="benefit-card">
+                    <h3>2 Puntos</h3>
+                    <p>Canasta dentro de la línea de 3 puntos.</p>
+                </article>
+                <article class="benefit-card">
+                    <h3>3 Puntos</h3>
+                    <p>Canasta fuera de la línea de 3 puntos.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Violaciones, Faltas y Sanciones -->
+        <section class="card">
+            <h2>Violaciones, Faltas y Árbitros</h2>
+            
+            <p><strong>Violaciones comunes:</strong></p>
+            <ul class="phases-list">
+                <li><strong>Pasos:</strong> Dar más de dos pasos sin driblear.</li>
+                <li><strong>Dobles:</strong> Driblear, detenerse tomando la pelota y volver a driblear.</li>
+                <li><strong>Pie:</strong> Tocar el balón intencionalmente con el pie.</li>
+            </ul>
+
+            <p style="margin-top: 1rem;"><strong>Faltas y Sanciones:</strong></p>
+            <ul class="phases-list">
+                <li><strong>Faltas Personales:</strong> Máximo 5 por jugador (la 5ª implica eliminación).</li>
+                <li><strong>Faltas de Equipo:</strong> A partir de la 5ª falta colectiva en un período, se otorgan tiros libres al rival.</li>
+                <li><strong>Faltas Técnicas / Antideportivas / Descalificantes:</strong> Sanciones por conducta antideportiva, agresiones o faltas graves (expulsión directiva en descalificantes).</li>
+                <li><strong>Árbitros:</strong> 2 o 3 jueces dirigen el partido, controlan el marcador y sancionan las infracciones.</li>
+            </ul>
+        </section>
+
+        <!-- Múltiples formas de Acción y Expresión: Simulación interactiva -->
+        <section class="card">
+            <h2>Simulador de Situación de Juego</h2>
+            <p>Selecciona la acción para determinar si es una jugada legal, violación o falta:</p>
+            
+            <form id="rule-checker">
+                <div class="form-group">
+                    <label for="action-select">Situación en la cancha:</label>
+                    <select id="action-select" required>
+                        <option value="">-- Selecciona una jugada --</option>
+                        <option value="pasos">Dar 3 pasos seguidos con la pelota en la mano sin piconear.</option>
+                        <option value="tiro3">Lanzar desde detrás de la línea lejana y encestar.</option>
+                        <option value="zona3">Un atacante se queda 5 segundos dentro de la pintura rival.</option>
+                        <option value="falta5">Un jugador comete su quinta falta personal.</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary">Ver Sanción o Resultado</button>
+            </form>
+
+            <div id="rule-output" class="output-box" hidden>
+                <p id="rule-result"></p>
+            </div>
+        </section>
+
+        <!-- Múltiples formas de Compromiso: Autoevaluación -->
+        <section class="card">
+            <h2>Autoevaluación Rápida</h2>
+            <p>¿Cuántos tiempos muertos tiene derecho un equipo durante la segunda mitad del partido?</p>
+            <div class="quiz-buttons">
+                <button onclick="checkQuiz(2)" class="btn-quiz">2 Tiempos Muertos</button>
+                <button onclick="checkQuiz(3)" class="btn-quiz">3 Tiempos Muertos</button>
+                <button onclick="checkQuiz(5)" class="btn-quiz">5 Tiempos Muertos</button>
+            </div>
+            <p id="quiz-feedback" class="feedback-text"></p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>REA de Reglamento Básico de Básquetbol - 8° EBI Uruguay | Licencia CC-BY-SA 4.0</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
