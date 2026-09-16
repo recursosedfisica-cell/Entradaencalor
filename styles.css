@@ -1,27 +1,39 @@
 :root {
-    --bg-color: #f0f4f8;
+    --bg-color: #f1f5f9;
     --card-bg: #ffffff;
-    --text-color: #1a202c;
-    --primary-color: #d97706;
-    --primary-hover: #b45309;
-    --accent-color: #fef3c7;
-    --border-color: #cbd5e1;
+    --text-color: #0f172a;
+    --primary-gradient: linear-gradient(135deg, #ea580c, #d97706);
+    --primary-hover: #c2410c;
+    --accent-orange: #ffedd5;
+    --accent-blue: #e0f2fe;
+    --accent-green: #dcfce7;
+    --accent-purple: #f3e8ff;
+    --accent-amber: #fef3c7;
+    --border-color: #e2e8f0;
     --font-scale: 16px;
 }
 
+/* Modo Alto Contraste (DUA) */
 body.high-contrast {
     --bg-color: #000000;
     --card-bg: #121212;
     --text-color: #ffffff;
-    --primary-color: #facc15;
-    --primary-hover: #eab308;
-    --accent-color: #27272a;
+    --primary-gradient: linear-gradient(135deg, #facc15, #eab308);
+    --primary-hover: #fef08a;
+    --accent-orange: #27272a;
+    --accent-blue: #27272a;
+    --accent-green: #27272a;
+    --accent-purple: #27272a;
+    --accent-amber: #27272a;
     --border-color: #ffffff;
 }
 
 body.high-contrast .btn-primary,
-body.high-contrast .btn-quiz {
-    color: #000000;
+body.high-contrast .btn-quiz,
+body.high-contrast .badge,
+body.high-contrast .pill {
+    color: #000000 !important;
+    background: #facc15 !important;
     font-weight: bold;
 }
 
@@ -32,7 +44,7 @@ body.high-contrast .btn-quiz {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     font-size: var(--font-scale);
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -40,121 +52,217 @@ body {
     padding-bottom: 2rem;
 }
 
+/* Header estilizado */
 .top-bar {
-    background-color: var(--primary-color);
+    background: var(--primary-gradient);
     color: white;
-    padding: 1rem 2rem;
+    padding: 1.2rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
+    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
 }
 
-body.high-contrast .top-bar {
-    background-color: #1a1a1a;
-    border-bottom: 2px solid var(--border-color);
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.logo-icon {
+    font-size: 2rem;
 }
 
 .accessibility-controls button {
-    background-color: var(--card-bg);
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
-    padding: 0.5rem 0.8rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #0f172a;
+    border: none;
+    padding: 0.5rem 0.9rem;
     font-size: 0.9rem;
+    font-weight: bold;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 6px;
     margin-left: 0.3rem;
+    transition: transform 0.2s, background-color 0.2s;
 }
 
+.accessibility-controls button:hover {
+    transform: translateY(-2px);
+    background-color: #ffffff;
+}
+
+/* Layout Contenedor */
 .container {
-    max-width: 900px;
+    max-width: 950px;
     margin: 2rem auto;
     padding: 0 1rem;
 }
 
+/* Tarjetas */
 .card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 12px;
+    padding: 1.8rem;
+    margin-bottom: 1.8rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    position: relative;
+    overflow: hidden;
+}
+
+.border-orange { border-top: 5px solid #ea580c; }
+.border-blue { border-top: 5px solid #0284c7; }
+.border-purple { border-top: 5px solid #9333ea; }
+.interactive-card { border-top: 5px solid #16a34a; }
+.quiz-card { border-top: 5px solid #d97706; }
+
+/* Hero Section */
+.hero-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 0;
+    overflow: hidden;
+}
+
+.hero-image-container {
+    width: 100%;
+    max-height: 380px;
+    overflow: hidden;
+    background-color: #0284c7;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-text {
     padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-h1, h2, h3 {
-    margin-bottom: 1rem;
+/* Badges / Distintivos */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 20px;
+    margin-bottom: 0.8rem;
 }
 
+.badge-orange { background-color: #ffedd5; color: #c2410c; }
+.badge-blue { background-color: #e0f2fe; color: #0369a1; }
+.badge-purple { background-color: #f3e8ff; color: #6b21a8; }
+.badge-green { background-color: #dcfce7; color: #15803d; }
+
+/* Grilla */
 .benefits-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1.2rem;
 }
 
 .benefit-card {
-    background-color: var(--accent-color);
-    padding: 1rem;
-    border-radius: 6px;
+    padding: 1.2rem;
+    border-radius: 10px;
     text-align: center;
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
+.bg-orange-soft { background-color: var(--accent-orange); }
+.bg-blue-soft { background-color: var(--accent-blue); }
+.bg-green-soft { background-color: var(--accent-green); }
+.bg-amber { background-color: var(--accent-amber); }
+
 .benefit-card .icon {
-    font-size: 2rem;
+    font-size: 2.2rem;
     display: block;
     margin-bottom: 0.5rem;
 }
 
-.phases-list {
-    margin-left: 1.5rem;
-    margin-bottom: 1rem;
+/* Listas estilizadas con Pills */
+.styled-list {
+    list-style: none;
+    margin-top: 0.8rem;
 }
 
-.phases-list li {
-    margin-bottom: 0.5rem;
+.styled-list li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
 }
 
+.pill {
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: white;
+}
+
+.pill.red { background-color: #ef4444; }
+.pill.orange { background-color: #f97316; }
+.pill.purple { background-color: #a855f7; }
+
+/* Formularios y Botones */
 .form-group {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
 }
 
 label {
     display: block;
-    margin-bottom: 0.3rem;
-    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
 }
 
 select {
     width: 100%;
-    padding: 0.6rem;
+    padding: 0.8rem;
     font-size: 1rem;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
     background-color: var(--card-bg);
     color: var(--text-color);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+select:focus {
+    border-color: #ea580c;
 }
 
 .btn-primary, .btn-quiz {
-    background-color: var(--primary-color);
+    background: var(--primary-gradient);
     color: white;
     border: none;
-    padding: 0.7rem 1.2rem;
+    padding: 0.8rem 1.4rem;
     font-size: 1rem;
-    border-radius: 4px;
+    font-weight: 600;
+    border-radius: 8px;
     cursor: pointer;
-    margin-top: 0.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .btn-primary:hover, .btn-quiz:hover {
-    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(234, 88, 12, 0.3);
 }
 
 .output-box {
     margin-top: 1.5rem;
-    padding: 1rem;
-    background-color: var(--accent-color);
-    border-left: 4px solid var(--primary-color);
+    padding: 1.2rem;
+    background-color: var(--accent-orange);
+    border-left: 5px solid #ea580c;
+    border-radius: 6px;
 }
 
 .quiz-buttons {
@@ -167,11 +275,13 @@ select {
 .feedback-text {
     margin-top: 1rem;
     font-weight: bold;
+    font-size: 1.05rem;
 }
 
 footer {
     text-align: center;
-    padding: 1rem;
-    font-size: 0.85rem;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    color: #64748b;
     border-top: 1px solid var(--border-color);
 }

@@ -10,7 +10,10 @@
 
     <!-- Barra de Accesibilidad DUA -->
     <header class="top-bar">
-        <h1>Básquetbol: Reglamento Básico</h1>
+        <div class="brand">
+            <span class="logo-icon" aria-hidden="true">🏀</span>
+            <h1>Básquetbol: Reglamento Básico</h1>
+        </div>
         <div class="accessibility-controls" aria-label="Herramientas de accesibilidad">
             <button id="btn-contrast" aria-label="Cambiar a modo alto contraste">☯️ Contraste</button>
             <button id="btn-text-inc" aria-label="Aumentar tamaño de texto">A+</button>
@@ -20,21 +23,33 @@
 
     <main class="container">
         
+        <!-- Hero Section con la Imagen Principal -->
+        <section class="card hero-card">
+            <div class="hero-image-container">
+                <img src="watermarked_img_458823380307180176.jpg" alt="Ilustración colorida de un partido de básquetbol en cancha con jugadores en acción" class="hero-img">
+            </div>
+            <div class="hero-text">
+                <h2>Aprende las Reglas Clave del Básquetbol</h2>
+                <p>Recurso Educativo Abierto diseñado para comprender de forma dinámica la duración, puntuación, faltas y violaciones del juego.</p>
+            </div>
+        </section>
+
         <!-- Múltiples formas de Representación: Datos Esenciales -->
-        <section class="card">
+        <section class="card border-orange">
+            <span class="badge badge-orange">Estructura</span>
             <h2>Estructura del Juego y Cancha</h2>
             <div class="benefits-grid">
-                <article class="benefit-card">
+                <article class="benefit-card bg-orange-soft">
                     <span class="icon" aria-hidden="true">⏱️</span>
                     <h3>Tiempo</h3>
                     <p>4 períodos de 10 min. Tiempo extra de 5 min si hay empate.</p>
                 </article>
-                <article class="benefit-card">
+                <article class="benefit-card bg-blue-soft">
                     <span class="icon" aria-hidden="true">👥</span>
                     <h3>Jugadores</h3>
                     <p>5 en cancha por equipo y hasta 7 suplentes (sin límite de cambios).</p>
                 </article>
-                <article class="benefit-card">
+                <article class="benefit-card bg-green-soft">
                     <span class="icon" aria-hidden="true">📐</span>
                     <h3>Cancha</h3>
                     <p>28m de largo por 15m de ancho. Inicio con salto en círculo central.</p>
@@ -43,70 +58,73 @@
         </section>
 
         <!-- Reglas de Tiempo y Puntuación -->
-        <section class="card">
+        <section class="card border-blue">
+            <span class="badge badge-blue">Reglamento</span>
             <h2>Reglas de Tiempo y Sistema de Puntuación</h2>
             
             <h3>Límites de Posesión y Posición:</h3>
-            <ul class="phases-list">
-                <li><strong>8 segundos:</strong> Tiempo máximo para cruzar la línea de medio campo.</li>
-                <li><strong>24 segundos:</strong> Tiempo máximo para intentar un tiro al aro.</li>
-                <li><strong>3 segundos:</strong> Tiempo máximo que un atacante puede permanecer en la zona pintada.</li>
+            <ul class="styled-list">
+                <li><span class="pill red">8 Seg.</span> Tiempo máximo para cruzar la línea de medio campo.</li>
+                <li><span class="pill orange">24 Seg.</span> Tiempo máximo para intentar un tiro al aro.</li>
+                <li><span class="pill purple">3 Seg.</span> Tiempo máximo en la zona restringida (pintura) para un atacante.</li>
             </ul>
 
             <h3 style="margin-top: 1.5rem;">Puntuación:</h3>
             <div class="benefits-grid">
-                <article class="benefit-card">
+                <article class="benefit-card bg-amber">
                     <h3>1 Punto</h3>
-                    <p>Tiro libre anotado.</p>
+                    <p>Tiro libre anotado tras falta.</p>
                 </article>
-                <article class="benefit-card">
+                <article class="benefit-card bg-amber">
                     <h3>2 Puntos</h3>
-                    <p>Canasta dentro de la línea de 3 puntos.</p>
+                    <p>Canasta dentro de la línea de 3.</p>
                 </article>
-                <article class="benefit-card">
+                <article class="benefit-card bg-amber">
                     <h3>3 Puntos</h3>
-                    <p>Canasta fuera de la línea de 3 puntos.</p>
+                    <p>Canasta fuera de la línea de 3.</p>
                 </article>
             </div>
         </section>
 
-        <!-- Violaciones, Faltas y Sanciones -->
-        <section class="card">
-            <h2>Violaciones, Faltas y Árbitros</h2>
+        <!-- Violaciones, Faltas y Árbitros -->
+        <section class="card border-purple">
+            <span class="badge badge-purple">Arbitraje</span>
+            <h2>Violaciones, Faltas y Sanciones</h2>
             
             <p><strong>Violaciones comunes:</strong></p>
-            <ul class="phases-list">
-                <li><strong>Pasos:</strong> Dar más de dos pasos sin driblear.</li>
+            <ul class="styled-list">
+                <li><strong>Pasos:</strong> Dar más de dos pasos sin driblear el balón.</li>
                 <li><strong>Dobles:</strong> Driblear, detenerse tomando la pelota y volver a driblear.</li>
                 <li><strong>Pie:</strong> Tocar el balón intencionalmente con el pie.</li>
             </ul>
 
             <p style="margin-top: 1rem;"><strong>Faltas y Sanciones:</strong></p>
-            <ul class="phases-list">
+            <ul class="styled-list">
                 <li><strong>Faltas Personales:</strong> Máximo 5 por jugador (la 5ª implica eliminación).</li>
-                <li><strong>Faltas de Equipo:</strong> A partir de la 5ª falta colectiva en un período, se otorgan tiros libres al rival.</li>
-                <li><strong>Faltas Técnicas / Antideportivas / Descalificantes:</strong> Sanciones por conducta antideportiva, agresiones o faltas graves (expulsión directiva en descalificantes).</li>
-                <li><strong>Árbitros:</strong> 2 o 3 jueces dirigen el partido, controlan el marcador y sancionan las infracciones.</li>
+                <li><strong>Faltas de Equipo:</strong> A partir de la 5ª falta colectiva por período, el rival recibe tiros libres.</li>
+                <li><strong>Técnicas / Antideportivas / Descalificantes:</strong> Sanciones por mala conducta o faltas graves.</li>
+                <li><strong>Árbitros:</strong> 2 o 3 jueces dirigen el encuentro y hacen cumplir las normas.</li>
             </ul>
         </section>
 
         <!-- Múltiples formas de Acción y Expresión: Simulación interactiva -->
-        <section class="card">
-            <h2>Simulador de Situación de Juego</h2>
-            <p>Selecciona la acción para determinar si es una jugada legal, violación o falta:</p>
+        <section class="card interactive-card">
+            <span class="badge badge-green">Interactiva</span>
+            <h2>Simulador de Situaciones de Juego</h2>
+            <p>Selecciona una jugada para determinar su resultado o sanción:</p>
             
             <form id="rule-checker">
                 <div class="form-group">
                     <label for="action-select">Situación en la cancha:</label>
                     <select id="action-select" required>
                         <option value="">-- Selecciona una jugada --</option>
-                        <option value="pasos">Dar 3 pasos seguidos con la pelota en la mano sin piconear.</option>
-                        <option value="tiro3">Lanzar desde detrás de la línea lejana y encestar.</option>
-                        <option value="zona3">Un atacante se queda 5 segundos dentro de la pintura rival.</option>
+                        <option value="pasos">Dar 3 pasos seguidos con la pelota en la mano sin picar.</option>
+                        <option value="tiro3">Lanzar desde detrás de la línea perimetral y encestar.</option>
+                        <option value="zona3">Un atacante permanece 5 segundos dentro de la pintura rival.</option>
                         <option value="falta5">Un jugador comete su quinta falta personal.</option>
                     </select>
                 </div>
-                <button type="submit" class="btn-primary">Ver Sanción o Resultado</button>
+                <button type="submit" class="btn-primary">Ver Resultado / Sanción</button>
             </form>
 
             <div id="rule-output" class="output-box" hidden>
@@ -115,7 +133,8 @@
         </section>
 
         <!-- Múltiples formas de Compromiso: Autoevaluación -->
-        <section class="card">
+        <section class="card quiz-card">
+            <span class="badge badge-orange">Desafío</span>
             <h2>Autoevaluación Rápida</h2>
             <p>¿Cuántos tiempos muertos tiene derecho un equipo durante la segunda mitad del partido?</p>
             <div class="quiz-buttons">
